@@ -81,17 +81,17 @@ if __name__ == '__main__':
         model = joblib.load('models/logistic_regression_model.pkl')
         print("Loaded model from models/logistic_regression_model.pkl")
     # Fall back to original location if needed
-    elif os.path.exists('model.joblib'):
-        model = joblib.load('model.joblib')
-        print("Loaded model from model.joblib")
+    elif os.path.exists('model.pkl'):
+        model = joblib.load('model.pkl')
+        print("Loaded model from model.pkl")
     
     # Try loading scaler from models directory first
     if os.path.exists('models/scaler.pkl'):
         scaler = joblib.load('models/scaler.pkl')
         print("Loaded scaler from models/scaler.pkl")
     # Fall back to original location if needed
-    elif os.path.exists('scaler.joblib'):
-        scaler = joblib.load('scaler.joblib')
-        print("Loaded scaler from scaler.joblib")
+    elif os.path.exists('scaler.pkl'):
+        scaler = joblib.load('scaler.pkl')
+        print("Loaded scaler from scaler.pkl")
     
     app.run(debug=True, port=8080)

@@ -39,7 +39,7 @@ def load_and_preprocess_data(file_path):
 
 def train_model():
     # Load and preprocess data
-    X, y = load_and_preprocess_data('student_dropout.csv')
+    X, y = load_and_preprocess_data('data/student_dropout.csv')
     
     # Split the data
     X_train, X_test, y_train, y_test = train_test_split(
@@ -68,9 +68,9 @@ def train_model():
     print('\nDetailed Classification Report:')
     print(classification_report(y_test, y_pred))
     
-    # Save the model and scaler
-    joblib.dump(model, 'model.joblib')
-    joblib.dump(scaler, 'scaler.joblib')
+    # Save the model and scaler backup copies in root directory for backward compatibility
+    joblib.dump(model, 'models/model.pkl')
+    joblib.dump(scaler, 'models/scaler.pkl')
     
     print('\nModel and scaler saved successfully!')
 
