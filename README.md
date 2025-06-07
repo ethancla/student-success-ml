@@ -42,9 +42,11 @@ The prediction model is a logistic regression classifier that achieves approxima
 
 - `app.py`: Flask web application
 - `train_model.py`: Script to train the logistic regression model
-- `model.joblib`: Trained model file
-- `scaler.joblib`: Feature scaler
+- `model.pkl`: Trained model file for backward compatibility
+- `scaler.pkl`: Feature scaler for backward compatibility
 - `templates/`: HTML templates for the web interface
+- `notebooks/`: Jupyter notebooks for data preprocessing, analysis, and model comparison
+- `models/`: Trained model files
 - `requirements.txt`: Required Python packages
 
 ## Usage

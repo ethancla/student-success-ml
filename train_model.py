@@ -69,17 +69,26 @@ def train_model():
     print(classification_report(y_test, y_pred))
     
     # Save the model and scaler backup copies in root directory for backward compatibility
-    joblib.dump(model, 'models/model.pkl')
-    joblib.dump(scaler, 'models/scaler.pkl')
+    joblib.dump(model, 'model.pkl')
+    joblib.dump(scaler, 'scaler.pkl')
     
     print('\nModel and scaler saved successfully!')
 
 if __name__ == '__main__':
     # Delete any existing testing models
     import os
-    if os.path.exists('logistic_regression_model (1).pkl'):
-        os.remove('logistic_regression_model (1).pkl')
-    if os.path.exists('mock_model.py'):
-        print('Removing mock model file')
+
+    # Clean up old or test files
+    old_files = [
+        'logistic_regression_model (1).pkl',
+        'mock_model.py',
+        'model.joblib',
+        'scaler.joblib'
+    ]
+
+    for file in old_files:
+        if os.path.exists(file):
+            os.remove(file)
+            print(f'Removed old file: {file}')
     
     train_model()
